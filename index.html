@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Parul 💖</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --pink:#ff7eb3;
+    --peach:#ffd6c9;
+    --lav:#e9d8ff;
+    --glass:rgba(255,255,255,0.35);
+    --shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:
+      radial-gradient(circle at top left,var(--peach),transparent 60%),
+      radial-gradient(circle at bottom right,var(--lav),transparent 60%),
+      linear-gradient(135deg,#fff1f6,#f8f4ff);
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* Floating elements */
+.floating-elements{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+}
+.float{
+    position:absolute;
+    opacity:.18;
+    animation:float 18s linear infinite;
+}
+@keyframes float{
+    from{transform:translateY(110vh) rotate(0deg)}
+    to{transform:translateY(-120px) rotate(360deg)}
+}
+
+/* Sections */
+section{
+    min-height:100vh;
+    padding:80px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    z-index:1;
+}
+
+/* Glass card */
+.glass{
+    background:var(--glass);
+    backdrop-filter:blur(18px);
+    border-radius:24px;
+    box-shadow:var(--shadow);
+    padding:40px;
+}
+
+/* Landing */
+#landing h1{
+    font-size:3.2rem;
+    margin-bottom:10px;
+}
+#landing p{
+    font-size:1.3rem;
+    opacity:.9;
+}
+.btn{
+    margin-top:30px;
+    padding:16px 40px;
+    border:none;
+    border-radius:40px;
+    font-size:1.1rem;
+    cursor:pointer;
+    background:linear-gradient(135deg,var(--pink),#ff4f8b);
+    color:#fff;
+    box-shadow:0 15px 30px rgba(255,79,139,.4);
+    transition:.3s;
+}
+.btn:hover{transform:translateY(-3px)}
+
+/* About */
+#about{
+    gap:40px;
+}
+.about-wrap{
+    display:flex;
+    gap:50px;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+}
+.avatar{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    background:#eee;
+    box-shadow:var(--shadow);
+}
+.cards{
+    max-width:420px;
+    display:grid;
+    gap:14px;
+}
+.card{
+    padding:16px 20px;
+    border-radius:16px;
+    background:rgba(255,255,255,.6);
+}
+
+/* Memories */
+.slideshow{
+    display:flex;
+    gap:20px;
+    animation:scroll 40s linear infinite;
+}
+@keyframes scroll{
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
+}
+.frame{
+    width:280px;
+    background:rgba(255,255,255,.65);
+    border-radius:20px;
+    padding:15px;
+    box-shadow:var(--shadow);
+}
+.frame img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:14px;
+}
+
+/* Message */
+#message{
+    background:linear-gradient(135deg,#fff6d8,#fff1fa);
+}
+#message-text{
+    font-family:'Dancing Script',cursive;
+    font-size:1.8rem;
+    max-width:700px;
+    line-height:1.7;
+}
+
+/* Bestie cards */
+#why-bestie{
+    width:100%;
+}
+.bestie-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+    max-width:900px;
+}
+.bestie-card{
+    padding:22px;
+    border-radius:18px;
+    background:rgba(255,255,255,.65);
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+.bestie-card:hover{transform:translateY(-6px)}
+
+/* Final */
+#final{
+    background:linear-gradient(135deg,#1a1a1a,#000);
+    color:#fff;
+}
+.surprise{display:none}
+.surprise h1{font-size:3rem}
+
+/* Footer */
+footer{
+    padding:30px;
+    text-align:center;
+    opacity:.8;
+}
+
+/* Mobile */
+@media(max-width:768px){
+    #landing h1{font-size:2.4rem}
+    #message-text{font-size:1.5rem}
+}
+</style>
+</head>
+
+<body>
+
+<div class="floating-elements">
+    <div class="float" style="left:10%;width:30px;height:30px;background:pink;border-radius:50%"></div>
+    <div class="float" style="left:70%;width:20px;height:20px;background:#c77dff;border-radius:50%"></div>
+</div>
+
+<section id="landing">
+    <div class="glass">
+        <h1>Happy Birthday, Parul 🎂</h1>
+        <p>to my bestie, my constant, my favourite human</p>
+        <button class="btn" onclick="go()">start the surprise ✨</button>
+    </div>
+</section>
+
+<section id="about">
+    <div class="about-wrap glass">
+        <div class="avatar"></div>
+        <div class="cards">
+            <h2>this day is special because of you</h2>
+            <div class="card">you turn ordinary moments into memories</div>
+            <div class="card">you listen, understand, and stay</div>
+            <div class="card">you deserve all the happiness today</div>
+        </div>
+    </div>
+</section>
+
+<section id="memories">
+    <div class="slideshow">
+        <div class="frame"><img><p>this moment >>> 🫶</p></div>
+        <div class="frame"><img><p>still laughing 😭</p></div>
+        <div class="frame"><img><p>one of my favourites</p></div>
+        <div class="frame"><img><p>bestie things</p></div>
+    </div>
+</section>
+
+<section id="message">
+    <div class="glass">
+        <div id="message-text"></div>
+    </div>
+</section>
+
+<section id="why-bestie">
+    <div class="bestie-grid">
+        <div class="bestie-card">you always get me 🤍</div>
+        <div class="bestie-card">you make bad days better</div>
+        <div class="bestie-card">honest, kind, real</div>
+        <div class="bestie-card">my safe place</div>
+        <div class="bestie-card">never alone with you</div>
+        <div class="bestie-card">best friend forever ♾️</div>
+    </div>
+</section>
+
+<section id="final">
+    <button class="btn" onclick="final()">final surprise 🎁</button>
+    <div class="surprise" id="surprise">
+        <h1>happy birthday parul 🎉</h1>
+        <p>you are deeply loved, always</p>
+    </div>
+</section>
+
+<footer>made with love by your bestie 💗</footer>
+
+<script>
+function go(){
+    document.querySelector('#about').scrollIntoView({behavior:'smooth'});
+}
+
+const msg=`dear parul,
+
+thank you for being my constant, my comfort, and my chaos.
+life is softer and happier with you in it.
+
+happy birthday, bestie.
+always proud of you.`;
+
+let i=0,done=false;
+const el=document.getElementById('message-text');
+window.addEventListener('scroll',()=>{
+    if(window.scrollY>1200 && !done){
+        done=true;
+        (function type(){
+            if(i<msg.length){
+                el.innerHTML+=msg[i++];
+                setTimeout(type,45);
+            }
+        })();
+    }
+});
+
+function final(){
+    document.getElementById('surprise').style.display='block';
+    confetti();
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</body>
+</html>
